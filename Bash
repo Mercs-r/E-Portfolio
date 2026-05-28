@@ -1,0 +1,5 @@
+npm create vite@latest rutik-portfolio -- --template react
+npm install
+npm install tailwindcss @tailwindcss/vite
+npm install framer-motion lucide-react recharts
+npm install react-icons

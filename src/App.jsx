@@ -6,9 +6,12 @@ import Skills from "./components/Skills";
 import Education from "./components/Edu";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
+import Research from "./components/Research";
 import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import FadeUp from "./components/FadeUp";
+
 
 
 export default function App() {
@@ -30,6 +33,7 @@ export default function App() {
   }, []);
 
   return (
+    
     <>
       <div
         id="cursor-glow"
@@ -40,18 +44,38 @@ export default function App() {
         <Navbar />
 
         <main className="pt-20">
+          <FadeUp>
           <Hero />
+          </FadeUp>
+          <FadeUp>
           <About />
+          </FadeUp>
+          <FadeUp>
           <Education />
+          </FadeUp>
+          <FadeUp>
           <Skills />
+         </FadeUp>
+         <FadeUp>
           <Experience />
+          </FadeUp>
+          <FadeUp>
           <Projects />
+          </FadeUp>
+          <FadeUp>
+          <Research />
+          </FadeUp>
+          <FadeUp>
           <Certifications />
+          </FadeUp>
+          <FadeUp>
           <Contact />
+          </FadeUp>
         </main>
 
         <Footer />
       </div>
+      
     </>
   );
 }

@@ -1,10 +1,10 @@
-// ==============================
-// Navbar.jsx
-// ==============================
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white/5 backdrop-blur-xl border-b border-white/10 z-50">
+    <nav initial={{ y: -100, opacity: 0,}}
+  animate={{ y: 0, opacity: 1,}}
+  transition={{ duration: 0.8,}}
+ className="fixed top-0 left-0 w-full bg-white/5 backdrop-blur-xl border-b border-white/10 z-50">
 
       <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
 

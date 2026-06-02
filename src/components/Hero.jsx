@@ -1,34 +1,56 @@
-// ==============================
-// Hero.jsx
-// ==============================
 
 import { TypeAnimation } from "react-type-animation";
+import { motion } from "framer-motion";
+import ParticlesBackground from "./ParticlesBackground";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center px-6 overflow-hidden">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center overflow-hidden px-6"
+    >
 
-      {/* Background Glow */}
-      <div className="absolute inset-0 overflow-hidden">
+      <ParticlesBackground />
 
-        <div className="absolute top-20 left-20 w-96 h-96 bg-blue-500 rounded-full blur-[140px] opacity-20 animate-pulse"></div>
+   
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
 
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-cyan-400 rounded-full blur-[140px] opacity-20 animate-pulse"></div>
+   
+      <div className="absolute top-20 left-20 w-96 h-96 bg-blue-500 rounded-full blur-[140px] opacity-20 animate-pulse"></div>
 
-      </div>
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-cyan-400 rounded-full blur-[140px] opacity-20 animate-pulse"></div>
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center relative z-10">
 
-        {/* Left */}
-        <div>
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center relative z-10">
 
-          <p className="text-blue-400 text-xl mb-4">
+        <motion.div
+          initial={{ opacity: 0, x: -80 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+        >
+
+          <div className="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 mb-8 backdrop-blur-xl">
+
+            <span className="w-3 h-3 rounded-full bg-green-400 animate-pulse"></span>
+
+            Open To Opportunities
+
+          </div>
+
+
+          <p className="text-blue-400 text-2xl mb-4">
             Hello, I'm
           </p>
 
-          <h1 className="text-6xl md:text-7xl font-bold leading-tight">
-            Rutik Kadam
-          </h1>
+        
+          <h3 className="text-2xl md:text-6xl font-extrabold leading-tight text-white">
+            Rutik
+            <br />
+            <span className="bg-gradient-to-r from-blue-400 to-cyan-300 text-transparent bg-clip-text">
+              Kadam
+            </span>
+          </h3>
+
 
           <TypeAnimation
             sequence={[
@@ -40,74 +62,135 @@ export default function Hero() {
               2000,
               "Big Data Engineer",
               2000,
-              "ML Developer",
+              "Machine Learning Engineer",
               2000,
             ]}
             wrapper="span"
             speed={50}
             repeat={Infinity}
-            className="text-3xl text-blue-400 font-semibold mt-6 block"
+            className="block mt-8 text-3xl md:text-4xl font-semibold text-blue-400"
           />
 
-          <p className="mt-8 text-gray-300 leading-8 text-lg max-w-2xl">
-            Passionate about building scalable analytics,
-            automation workflows, AI-powered solutions,
-            and business intelligence dashboards using
-            Python, SQL, Spark, Power BI, and Machine Learning.
+          <p className="mt-8 text-lg md:text-xl text-gray-300 leading-9 max-w-2xl">
+            Passionate about transforming raw data into actionable insights
+            through Data Analytics, Machine Learning, Big Data, Power BI,
+            Apache Spark, and Generative AI. Focused on building scalable,
+            intelligent, and business-driven solutions.
           </p>
 
-          <div className="mt-6 flex flex-col gap-3 text-gray-300">
-
-            <a
-              href="mailto:rutikkadam837@gmail.com"
-              className="hover:text-blue-400 transition"
-            >
-              📧 rutikkadam837@gmail.com
-            </a>
-
-            <p>India
-            </p>
-
+   
+          <div className="mt-8 space-y-3 text-gray-300">
+            <p>📧 rutikkadam837@gmail.com</p>
+            <p>📍 India</p>
           </div>
 
-          <div className="flex gap-4 mt-10 flex-wrap">
 
-            <a
+          <div className="flex flex-wrap gap-5 mt-10">
+
+            <motion.a
               href="/resume.pdf"
               download
-              className="bg-gradient-to-r from-blue-500 to-cyan-400 px-8 py-4 rounded-2xl font-semibold hover:scale-110 hover:-translate-y-1 active:scale-95 transition duration-300 shadow-lg shadow-blue-500/30"
+              whileHover={{ scale: 1.05, y: -4 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-gradient-to-r from-blue-500 to-cyan-400 px-8 py-4 rounded-2xl font-semibold shadow-lg shadow-blue-500/30"
             >
-               Resume
-            </a>
+              Resume
+            </motion.a>
 
-            <a
+            <motion.a
               href="#projects"
-              className="border border-slate-700 hover:border-blue-400 px-8 py-4 rounded-2xl transition"
+              whileHover={{ scale: 1.05, y: -4 }}
+              whileTap={{ scale: 0.95 }}
+              className="border border-slate-700 hover:border-blue-400 px-8 py-4 rounded-2xl backdrop-blur-xl"
             >
               View Projects
-            </a>
+            </motion.a>
 
           </div>
 
-        </div>
+          <div className="grid grid-cols-3 gap-8 mt-14">
 
-        {/* Right */}
-        <div className="flex justify-center">
+            <div>
+              <h3 className="text-3xl font-bold text-blue-400">
+                10+
+              </h3>
+              <p className="text-gray-400">
+                Projects
+              </p>
+            </div>
+            <div>
+              <h3 className="text-3xl font-bold text-blue-400">
+               1.7+
+              </h3>
+              <p className="text-gray-400">
+                Expirence
+              </p>
+            </div>
+            <div>
+              <h3 className="text-3xl font-bold text-blue-400">
+                8+
+              </h3>
+              <p className="text-gray-400">
+                Certifications
+              </p>
+            </div>
 
-          <div className="relative">
-
-            <div className="absolute inset-0 bg-blue-500 blur-3xl opacity-30 rounded-full"></div>
-
-            <div className="relative w-72 h-72 rounded-full bg-white/10 backdrop-blur-xl border border-white/10 flex items-center justify-center text-8xl shadow-2xl">
-              🚀
+            <div>
+              <h3 className="text-3xl font-bold text-blue-400">
+                8.44
+              </h3>
+              <p className="text-gray-400">
+                MCA CGPA
+              </p>
             </div>
 
           </div>
+        </motion.div>
 
-        </div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 80 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          className="flex justify-center"
+        >
+          <motion.div
+            animate={{
+              y: [0, -15, 0],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="relative"
+          >
+ 
+            <div className="absolute inset-0 bg-blue-500 blur-3xl opacity-30 rounded-full"></div>
+
+
+            <img
+              src="/profile.jpg"
+              alt="Rutik Kadam"
+              className="relative z-10 w-80 h-80 md:w-96 md:h-96 object-cover rounded-full border-4 border-blue-400 shadow-2xl"
+            />
+
+            <div className="absolute -top-4 -left-6 bg-white/10 backdrop-blur-xl border border-white/10 px-5 py-3 rounded-2xl">
+              <p className="text-blue-400 font-semibold">
+                Python • SQL • Machine Learning • PowerBI 
+              </p>
+            </div>
+
+            <div className="absolute bottom-0 -right-8 bg-white/10 backdrop-blur-xl border border-white/10 px-5 py-3 rounded-2xl">
+              <p className="text-cyan-300 font-semibold">
+                Spark • AI •Zepplin •Databricks
+              </p>
+            </div>
+
+          </motion.div>
+        </motion.div>
 
       </div>
-
     </section>
   );
 }

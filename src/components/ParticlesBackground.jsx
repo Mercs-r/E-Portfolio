@@ -1,78 +1,54 @@
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
+import { useEffect, useState } from "react";
+import Particles from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
 
 export default function ParticlesBackground() {
-  const particlesInit = async (main) => {
-    await loadFull(main);
-  };
+  const [init, setInit] = useState(false);
+
+  useEffect(() => {
+    loadSlim().then(() => {
+      setInit(true);
+    });
+  }, []);
+
+  if (!init) return null;
 
   return (
     <Particles
       id="tsparticles"
-      init={particlesInit}
-options={{
-  fullScreen: false,
+      options={{
+        fullScreen: false,
 
-  particles: {
-    number: {
-      value: 120,
-      density: {
-        enable: true,
-        area: 800,
-      },
-    },
+        particles: {
+          number: {
+            value: 80,
+          },
 
-    color: {
-      value: "#60a5fa",
-    },
+          color: {
+            value: "#38bdf8",
+          },
 
-    links: {
-      enable: true,
-      distance: 180,
-      color: "#60a5fa",
-      opacity: 0.5,
-      width: 1.5,
-    },
+          opacity: {
+            value: 0.3,
+          },
 
-    move: {
-      enable: true,
-      speed: 1.2,
-      direction: "none",
-      random: false,
-      straight: false,
-      outModes: {
-        default: "bounce",
-      },
-    },
+          size: {
+            value: 2,
+          },
 
-    opacity: {
-      value: 0.8,
-    },
+          move: {
+            enable: true,
+            speed: 1,
+          },
 
-    size: {
-      value: { min: 2, max: 5 },
-    },
-  },
-
-  interactivity: {
-    events: {
-      onHover: {
-        enable: true,
-        mode: "grab",
-      },
-    },
-
-    modes: {
-      grab: {
-        distance: 220,
-        links: {
-          opacity: 1,
+          links: {
+            enable: true,
+            color: "#38bdf8",
+            opacity: 0.2,
+          },
         },
-      },
-    },
-  },
-}}
-      className="absolute inset-0"
+      }}
+      className="absolute inset-0 z-0"
     />
   );
 }

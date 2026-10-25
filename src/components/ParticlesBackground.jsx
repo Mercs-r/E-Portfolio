@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Particles from "@tsparticles/react";
+
 import { loadSlim } from "@tsparticles/slim";
 
 export default function ParticlesBackground() {

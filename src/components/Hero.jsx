@@ -120,7 +120,7 @@ export default function Hero() {
             </div>
             <div>
               <h3 className="text-3xl font-bold text-blue-400">
-               1.7+
+               2+
               </h3>
               <p className="text-gray-400">
                 Expirence

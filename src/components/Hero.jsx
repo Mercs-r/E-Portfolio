@@ -1,7 +1,7 @@
 
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
-import ParticlesBackground from "./ParticlesBackground";
+
 
 export default function Hero() {
   return (

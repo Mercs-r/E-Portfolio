@@ -16,7 +16,7 @@ export default function Experience() {
             </h3>
 
             <p className="text-blue-400 mt-2">
-              Aug 2024 – Aug 2025
+              Aug 2024 – Aug 2026
             </p>
 
             <ul className="mt-4 space-y-3 text-gray-300">
